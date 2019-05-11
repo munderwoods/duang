@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.rating-input {
+  width: 98%;
+  height: 4em;
+  background: #baffc9;
+}

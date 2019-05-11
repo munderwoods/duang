@@ -1,0 +1,57 @@
+.button {
+  margin: 30px 10px 10px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #7e685a;
+  background: #baffc9;
+  border: solid 5px #baffc9;
+  padding: 5px;
+  transition-property: background, border;
+  transition-duration: .4s;
+}
+
+.active {
+  padding: 5px;
+  background: #ffffba;
+  border: solid 5px #ffffba;
+}
+
+.tab {
+  margin: 8px 0;
+}
+
+.tab.active {
+  padding: 5px;
+  background: #ffb3ba;
+  border: solid 5px #ffb3ba;
+}
+
+.left {
+  margin-right: 0;
+  border-radius: 10px  0 0 10px;
+}
+
+.right {
+  margin-left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.middle {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+@media screen and (max-width: 992px) {
+  .button {
+    margin: 5px;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 16vw;
+  }
+
+  a {
+    height: auto;
+    width: auto;
+  }
+}

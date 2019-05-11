@@ -1,0 +1,178 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+		background-color: #baffc9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffdfba; 
+    border-radius: 10px;
+}
+
+body {
+  background: #bae1ff;
+  color: #7e685a;
+  font-family: 'Sunflower', sans-serif;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  justify-content: space-around;
+}
+
+.App {
+  text-align: center;
+}
+
+.heading {
+  background: #ffb3ba;
+  width: 30%;
+  margin: auto;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.email {
+  font-size: 15px;
+  background: none;
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.tools {
+  margin-top: 30px;
+  height: 25px;
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.duang {
+  height: 100px;
+}
+
+.hero-heading {
+  font-size: 35px;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.intro {
+  width: 50%;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 5px;
+  background: #ffdfba;
+}
+
+.smallDuang {
+  height: 20px;
+  transform: translateY(4px);
+  border: none;
+  background: #baffc9;
+	margin: -4px;
+}
+
+.must-watch {
+  text-align: center;
+  background: #baffc9;
+  border-radius: 50px;
+  margin: 24px 24px 16px 24px;
+  bottom: 1px;
+  height: 100px;
+  width: 100px;
+  left: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition-property: background;
+  transition-duration: .4s;
+}
+
+  .tools2 {
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .tools3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .must-active {
+    background: #ffffba;
+  }
+
+  .up {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 25px;
+    padding: 10px 33px 0 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    background:#ffb3ba;
+    border-radius: 5px 5px 0 0;
+  }
+@media screen and (max-width: 992px) {
+  .up {
+    display: none;
+  }
+  .heading{
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .intro {
+    margin: 0;
+    width: auto;
+    border-radius: 0;
+  }
+  .tools-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    height: fit-content;
+  }
+
+  .tools {
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .tools2 {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 15px;
+  }
+
+  .tools3 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+}
