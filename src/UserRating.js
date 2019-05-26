@@ -8,6 +8,7 @@ class UserRating extends React.Component {
     this.state = {
       score: null,
       review: null,
+      error: ''
     }
   };
 
@@ -16,7 +17,7 @@ class UserRating extends React.Component {
     return this.props.movie.userRating.map(rat => {
       if(rat.review) {
         i++;
-        return <p key={i} className="user-reviews">{rat.rating + ' - ' + rat.review}</p>
+        return <p key={i} className="user-reviews"><div className="user-reviews-score">{rat.rating}</div>{' - ' + rat.review}</p>
       }
     });
   }
@@ -24,49 +25,55 @@ class UserRating extends React.Component {
   showInput() {
     if(!localStorage.getItem(this.props.movie._id) && localStorage.getItem(this.props.movie._id) !== '') {
       return <div className="input-container">
-          <select onChange={e => this.setState({score: e.target.value})}>
-            <option disabled selected={true}>Select Score</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
           <textarea
             className="rating-input"
             placeholder="Write your review here"
             onChange={e => this.setState({review: e.target.value})}
           />
-          <Button tab="" click={e => this.setUserRating(e)} title="Submit"/>
+          <div className="rating-controls">
+            <select onChange={e => this.setState({score: e.target.value})} className={this.state.error}>
+              <option disabled selected={true}>Select Score</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <Button click={e => this.setUserRating(e)} title="Submit" size="small"/>
+          </div>
         </div>
     }
   }
 
   setUserRating(e) {
     e.preventDefault();
-		fetch('/api/user-rating', {
-			method: 'post',
-      body: JSON.stringify({
-        id: this.props.movie._id,
-        userRating: this.state.score,
-        userReview: this.state.review
-      }),
-		})
-    .then(res => {
-      this.props.getFilms()
-      localStorage.setItem(this.props.movie._id, true);
-    })
-    .catch(err => console.log(err))
+    if(this.state.score) {
+      fetch('/api/user-rating', {
+        method: 'post',
+        body: JSON.stringify({
+          id: this.props.movie._id,
+          userRating: this.state.score,
+          userReview: this.state.review
+        }),
+      })
+      .then(res => {
+        this.props.getFilms()
+        localStorage.setItem(this.props.movie._id, true);
+      })
+      .catch(err => console.log(err))
+    } else {
+      this.setState({error: 'error'});
+    }
   }
 
   render() {
     return (
-      <div className="container">
+      <div className="user-rating">
         {this.showInput()}
         {this.makeUserReviews()}
       </div>

@@ -74,7 +74,7 @@ class Cell extends React.Component {
             <h4>Genre: {this.props.movie.genre[0]}{this.props.movie.genre[1].length > 0 ? "/" + this.props.movie.genre[1] : ""}</h4>
             <h4>Period: {this.props.movie.period}</h4>
             <h4>Director: {this.props.movie.director[0]}{this.props.movie.director[1].length > 0 ? " & " + this.props.movie.director[1] : ""}</h4>
-            <h4>User Score: {this.props.movie.userRating[0] ? this.makeUserScore() : 'Not Yet Scored'}</h4>
+            <h4>User Score: {this.props.movie.userRating[0] ? this.makeUserScore() : 'N/A'}</h4>
             <div className="omdb">
               <a className="loadScore" onClick={e => this.loadScore(e)}>Show MDB Score: </a>
               <p>{this.state.omdbScore}</p>

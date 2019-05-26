@@ -26,7 +26,17 @@ class Button extends React.Component {
   render() {
 
     return (
-      <a href="button" className={"button " + this.props.tab + " " + this.active() + " " + this.props.position} onClick={(e) => this.props.click(e, this.props.title)}>
+      <a
+        href="button"
+        className={
+          "button " +
+            this.active() + " " +
+            (this.props.tab || "") + " " +
+            (this.props.position || "") +  " " +
+            (this.props.size || "")
+        }
+        onClick={(e) => this.props.click(e, this.props.title)}
+      >
         {this.props.title}
       </a>
     );

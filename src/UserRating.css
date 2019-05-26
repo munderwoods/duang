@@ -1,10 +1,45 @@
-.container {
+.user-rating {
   width: 100%;
+  max-width: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 115px;
+}
+
+.user-reviews {
+  margin-bottom: 3px;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-reviews-score {
+  font-weight: 700;
+  margin-right: 4px;
 }
 
 .rating-input {
   width: 98%;
   height: 4em;
   background: #baffc9;
+  border: none;
+  border-radius: 10px;
+  color: #7e685a;
+  font-family: 'Sunflower', sans-serif;
+  padding: 5px;
+}
+
+select {
+  background: #baffc9;
+  border: none;
+  border-radius: 10px;
+  color: #7e685a;
+  font-family: 'Sunflower', sans-serif;
+  padding: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  border: solid 5px #baffc9;
+}
+
+.error {
+  border: solid 5px red;
 }

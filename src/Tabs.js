@@ -21,10 +21,10 @@ class Tabs extends React.Component {
     return (
       <div className="tabs">
         <span className="tab-selector">
-          <Button tab="tab" filter={this.props.tab} click={this.selectTab} title="Review"/>
-          <Button tab="tab" filter={this.props.tab} click={this.selectTab} title="Synopsis"/>
-          <Button tab="tab" filter={this.props.tab} click={this.selectTab} title="Trailer"/>
-          <Button tab="tab" filter={this.props.tab} click={this.selectTab} title="User Reviews"/>
+          <Button tab="tab" filter={this.props.tab} click={this.selectTab} position="left" title="Review"/>
+          <Button tab="tab" filter={this.props.tab} click={this.selectTab} position="middle" title="Synopsis"/>
+          <Button tab="tab" filter={this.props.tab} click={this.selectTab} position="middle" title="Trailer"/>
+          <Button tab="tab" filter={this.props.tab} click={this.selectTab} position="right" title="User Reviews"/>
         </span>
       </div>
     );
