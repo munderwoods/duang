@@ -39,10 +39,16 @@ app.get('/api/films', async function (req, res) {
 	res.json(data);
 });
 
-MongoClient.connect('mongodb://munderwoods:' + process.env.MONGO_PASS + '@ds155086.mlab.com:55086/duangchan', (err, client) => {
-  if (err) return console.log(err);
-  db = client.db('duangchan');
-  console.log("Connected to database: " + db.s.databaseName);
+MongoClient.connect(
+  'mongodb://munderwoods:' + process.env.MONGO_PASS + '@ds155086.mlab.com:55086/duangchan',
+   {
+     reconnectTries: Number.MAX_VALUE,
+     reconnectInterval: 1000
+   },
+  (err, client) => {
+    if (err) return console.log(err);
+    db = client.db('duangchan');
+    console.log("Connected to database: " + db.s.databaseName);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
