@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -40,7 +41,7 @@ app.get('/api/films', async function (req, res) {
 });
 
 MongoClient.connect(
-  'mongodb://munderwoods:' + process.env.MONGO_PASS + '@ds155086.mlab.com:55086/duangchan',
+  'mongodb+srv://jc:' + process.env.MONGO_PASS + '@duangchan.0tr9z.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
    {
      reconnectTries: Number.MAX_VALUE,
      reconnectInterval: 1000

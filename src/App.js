@@ -147,7 +147,7 @@ class App extends Component {
       }
 		}
 
-    this.stateSetter(sort, sortedList);
+    this.setFilter(sort, sortedList);
 
 		return sortedList;
   };
@@ -159,7 +159,7 @@ class App extends Component {
     });
   }
 
-	stateSetter(filter, list) {
+	setFilter(filter, list) {
 		if(filter !== "Random") {
 			this.setState({filter: filter, filteredList: list});
 		} else {
