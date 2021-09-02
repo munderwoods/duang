@@ -1,0 +1,77 @@
+.dock {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  min-height: 30px;
+  flex-direction: column;
+}
+
+.dock-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: -300px;
+  transition: all .3s ease-in;
+  opacity: 0;
+}
+
+.dock-container.show {
+  bottom: 0;
+  opacity: 1;
+}
+
+.dock-mask{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all .2s;
+  bottom: -100px;
+}
+
+.dock-mask-inner {
+  padding: 5px 15px;
+  background: rgba(0,0,0,.5);
+  border-radius: 3px 3px 0 0;
+}
+
+.dock-mask.show {
+  opacity: 1;
+  bottom: 0;
+}
+
+.intro {
+  position: absolute;
+  width: 50%;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 5px;
+  background: rgba(0,0,0,.5);
+  color: white;
+  bottom: 30px;
+  right: 30px;
+  backdrop-filter: blur(2px);
+}
+
+.email {
+  color: white;
+}
+
+.smallDuang {
+  height: 20px;
+  transform: translateY(4px);
+  border: none;
+	margin: -4px;
+}
+
+@media screen and (max-width: 992px) {
+  .tab-selector {
+  }
+}
+

@@ -3,6 +3,7 @@ import './App.css';
 import Cell from './Cell.js';
 import Button from './Button.js';
 import Search from './Search.js';
+import Dock from './Dock.js';
 
 class App extends Component {
   constructor(props) {
@@ -191,55 +192,30 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="heading">
-          <img alt="duang" className="duang" src="./duang.svg" />
-          <div className="hero-heading">DuangChan</div>
-          <h3>The Ultimate Jackie Chan Movie Reference</h3>
-        </div>
-
-        <p className="intro">
-          DuangChan is an exhaustive list of every movie starring Jackie Chan. These films are reviewed and rated from the perspective of a huge Jackie Chan fan. He's my favorite actor. The scores are not relative to cinema in general, but to Jackie Chan's body of work. They're also based on my subjective opinion, which can be colored by many factors outside my or Chan's control including print quality, translation errors, and voice acting. Films I consider "Must-Watch" are marked with the red "Duang" <img alt="smallduang" className="smallDuang" src="./duang-blue.svg"/> symbol behind the score. You can also filter for them, as well as for many other criteria below. If you have suggestions, questions, or just want to argue about my scores, please <a href="mailto:matthewsunderwood@gmail.com" className="email">email me.</a>
-        </p>
-
-        <Search filter={this.state.filter} searchFilter={this.searchFilter} handleClick={this.search}/>
-
-        <div className="tools-container">
-          <span className="tools">
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="left" title="Action"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="middle" title="Kung Fu"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="middle" title="Comedy"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="middle" title="Drama"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="right" title="Romance"/>
-          </span>
-          <span className="tools2">
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="" title="Director"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="" title="Period"/>
-            <h1 onClick={(e) => this.onClick(e, "Must-Watch")} className={"must-watch" + (this.state.filter === "Must-Watch" ? " must-active" : "")}>
-							<img alt="must" className='must' src='./duang-blue.svg' />
-              <div className="pull-forward">
-                Must Watch
-              </div>
-						</h1>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="" title="Title"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="" title="Random"/>
-          </span>
-          <span className="tools3">
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="left" title="Old"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="right" title="New"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="left" title="Good"/>
-            <Button tab="" filter={this.state.filter} click={this.onClick} position="right" title="Bad"/>
-          </span>
-        </div>
-
         <div className="list">
           {listMovies}
         </div>
 
-        <span className="up" onClick={this.up} role="img" aria-labelledby="totop">&#9757;</span>
+        <Dock>
+          <Search filter={this.state.filter} searchFilter={this.searchFilter} handleClick={this.search}/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="left" title="Action"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="middle" title="Kung Fu"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="middle" title="Comedy"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="middle" title="Drama"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="right" title="Romance"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="" title="Director"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="" title="Period"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="" title="Must-Watch"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="" title="Title"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="" title="Random"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="left" title="Old"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="right" title="New"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="left" title="Good"/>
+          <Button tab="" filter={this.state.filter} click={this.onClick} size="small" position="right" title="Bad"/>
+        </Dock>
 
       </div>
     );
   }
 }
-
 export default App;

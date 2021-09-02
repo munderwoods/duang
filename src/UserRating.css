@@ -3,7 +3,7 @@
   max-width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  min-height: 115px;
+  min-height: 161px;
 }
 
 .user-reviews {
@@ -20,26 +20,33 @@
 .rating-input {
   width: 98%;
   height: 4em;
-  background: #baffc9;
   border: none;
-  border-radius: 10px;
-  color: #7e685a;
+  color: white;
   font-family: 'Sunflower', sans-serif;
   padding: 5px;
 }
 
 select {
-  background: #baffc9;
+  background: rgba(0,0,0,.3);
   border: none;
-  border-radius: 10px;
-  color: #7e685a;
+  color: white;
   font-family: 'Sunflower', sans-serif;
   padding: 2px;
   font-size: 13px;
   font-weight: 700;
-  border: solid 5px #baffc9;
 }
 
 .error {
   border: solid 5px red;
+}
+
+textarea {
+  background: rgba(0,0,0,.3);
+}
+
+.rating {
+  background: rgba(0,0,0,.3);
+  color: white;
+  border: none;
+  border-radius: unset;
 }

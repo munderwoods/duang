@@ -30,7 +30,8 @@ class Button extends React.Component {
         href="button"
         className={
           "button " +
-            this.active() + " " +
+            (this.props.className || "") +
+            (this.active() + " ") +
             (this.props.tab || "") + " " +
             (this.props.position || "") +  " " +
             (this.props.size || "")

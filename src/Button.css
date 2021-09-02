@@ -1,19 +1,26 @@
 .button {
-  margin: 30px 10px 10px 10px;
-  border-radius: 10px;
+  margin: 10px;
   text-decoration: none;
-  color: #7e685a;
-  background: #baffc9;
-  border: solid 5px #baffc9;
+  color: white;;
   padding: 5px;
-  transition-property: background, border;
+  background: rgba(0,0,0,.5);
+  transition-property: background, border, color;
   transition-duration: .4s;
+}
+
+.button:hover {
+  background: black;
 }
 
 .active {
   padding: 5px;
-  background: #ffffba;
-  border: solid 5px #ffffba;
+  background: white;
+  color: black;
+}
+
+.active:hover {
+  background: white;
+  color: black;
 }
 
 .tab {
@@ -22,9 +29,8 @@
 }
 
 .tab.active {
+  background: white;
   padding: 5px;
-  background: #ffb3ba;
-  border: solid 5px #ffb3ba;
 }
 
 .left {
@@ -52,7 +58,6 @@
     margin: 5px;
     font-size: 10px;
     padding: 5px;
-    border-radius: 10px;
     width: 16vw;
   }
 
