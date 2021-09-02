@@ -2,6 +2,7 @@ const dotenv = require('dotenv').config();
 const request = require('request');
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const MongoClient = require('mongodb').MongoClient;
@@ -9,6 +10,12 @@ const ObjectId = require('mongodb').ObjectId;
 
 app.use(express.static('build'));
 app.use(bodyParser.json({ type: 'text/plain'}));
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.post('/api/user-rating', (req, res) => {
   db.collection('films').findOneAndUpdate(
