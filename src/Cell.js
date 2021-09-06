@@ -26,6 +26,8 @@ class Cell extends React.Component {
         reviews++;
         acc += +rat.rating;
         return acc;
+      } else {
+        return null;
       }
     }, 0);
 

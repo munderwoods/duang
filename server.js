@@ -42,11 +42,9 @@ app.get('/api/trailer', (req, res) => {
     request(youtubeUrl, function (error, response, body) {
       if(response.statusCode === 403) {
         res.send('fail');
-        console.log(body);
       }
       json = JSON.parse(body);
       if(json.items) {
-        console.log(body);
         resolve({trailerId: json.items[0].id.videoId});
       }
     })
@@ -79,7 +77,6 @@ app.get('/api/films', async function (req, res) {
         if(error) reject(error);
         json = JSON.parse(body);
         if(json != undefined) {
-          console.log(json);
           movieData[i].image = `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${json.poster_path}`;
           movieData[i].backdrop = `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${json.backdrop_path}`;
           movieData[i].movieDbScore = json.vote_average;

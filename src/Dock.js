@@ -1,6 +1,5 @@
 import React from 'react';
 import './Dock.css';
-import Button from './Button.js';
 
 class Tabs extends React.Component {
   constructor(props) {

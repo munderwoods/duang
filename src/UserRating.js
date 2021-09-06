@@ -18,6 +18,8 @@ class UserRating extends React.Component {
       if(rat.review) {
         i++;
         return <p key={i} className="user-reviews"><div className="user-reviews-score">{rat.rating}</div>{' - ' + rat.review}</p>
+      } else {
+        return null
       }
     });
   }
