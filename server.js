@@ -113,5 +113,5 @@ MongoClient.connect(
     console.log("Connected to database: " + db.s.databaseName);
 });
 
-app.listen(port, host, () => console.log(`Listening on port ${port}`));
+app.listen(port, host, () => console.log(`Listening on port ${port}, host: ${host}`));
 
