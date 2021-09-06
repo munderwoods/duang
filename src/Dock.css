@@ -17,6 +17,7 @@
   bottom: -300px;
   transition: all .3s ease-in;
   opacity: 0;
+  backdrop-filter: blur(2px);
 }
 
 .dock-container.show {
@@ -47,14 +48,14 @@
 }
 
 .intro {
-  position: relative;
+  position: absolute;
   width: 50%;
   margin: 25px auto;
   padding: 25px;
   border-radius: 5px;
   background: rgba(0,0,0,.5);
   color: white;
-  bottom: 300px;
+  bottom: 30px;
   right: 30px;
   backdrop-filter: blur(2px);
 }
@@ -75,6 +76,7 @@
     font-size: 1.5vw;
     bottom: 3vw;
     right: 3vw;
+    position: relative;
   }
   .smallDuang {
     height: 2.5vw;
@@ -89,7 +91,6 @@
     max-width: 100%;
     flex-wrap: wrap;
     height: fit-content;
-    backdrop-filter: blur(2px);
   }
 
   .dock-container > .button {
