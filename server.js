@@ -78,7 +78,11 @@ app.get('/api/films', async function (req, res) {
         json = JSON.parse(body);
         if(json != undefined) {
           movieData[i].image = `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${json.poster_path}`;
-          movieData[i].backdrop = `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${json.backdrop_path}`;
+          if(json.backdrop_path) {
+            movieData[i].backdrop = `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${json.backdrop_path}`;
+          } else {
+            movieData[i].backdrop = '/half.jpg';
+          }
           movieData[i].movieDbScore = json.vote_average;
         } else {
           movieData[i].image = '';
