@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
+const host = process.env.PORT || 'localhost';
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 
@@ -112,5 +113,5 @@ MongoClient.connect(
     console.log("Connected to database: " + db.s.databaseName);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, host, () => console.log(`Listening on port ${port}`));
 
