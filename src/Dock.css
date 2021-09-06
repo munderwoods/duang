@@ -47,14 +47,14 @@
 }
 
 .intro {
-  position: absolute;
+  position: relative;
   width: 50%;
   margin: 25px auto;
   padding: 25px;
   border-radius: 5px;
   background: rgba(0,0,0,.5);
   color: white;
-  bottom: 30px;
+  bottom: 300px;
   right: 30px;
   backdrop-filter: blur(2px);
 }
@@ -85,11 +85,19 @@
     display: none;
   }
 
+  .dock-container {
+    max-width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    backdrop-filter: blur(2px);
+  }
+
   .dock-container > .button {
-    font-size: 3px;
+    font-size: 2vw;
     padding: 1vw;
     margin: 0;
     margin-bottom: 3vw;
+    min-width: fit-content;
   }
 }
 

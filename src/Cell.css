@@ -30,7 +30,7 @@
   align-content: space-between;
   transition:max-height 1s;
   height: 100%;
-  font-size: 1.3vw;
+  font-size: 1.1vw;
 }
 
 .backdrop {
@@ -253,7 +253,7 @@ iframe {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 70%;
+    height: 60%;
   }
 
   .title {
@@ -261,7 +261,7 @@ iframe {
   }
 
   .cell-bottom {
-    height: 20%;
+    height: 30%;
   }
 
   .cell-left {
@@ -294,6 +294,7 @@ iframe {
 
   .cell-innerer{
     padding: 16px 16px 0 16px;
+    font-size: 2vw;
   }
 
   .trailer {
