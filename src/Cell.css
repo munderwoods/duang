@@ -2,6 +2,7 @@
   width: 100%;
   opacity: 0;
   background-size: cover;
+  background-position: center;
   background: cover;
   overflow: hidden;
   background-repeat: no-repeat;
