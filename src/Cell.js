@@ -49,13 +49,9 @@ class Cell extends React.Component {
     .catch(err => console.log(err))
   }
 
-  getBackdrop() {
-    return this.props.movie.backdrop;
-  }
-
   render() {
     return (
-      <div className="cell" style={{backgroundImage: `url('${this.getBackdrop()}')`}} ref="cell">
+      <div className="cell" style={{backgroundImage: `url('${this.props.movie.backdrop}')`}} ref="cell">
         <div className={"cell-inner"} >
           <div className={"cell-innerer"} >
             <a id={this.props.movie.name} href={'#' + this.props.movie.name} className="title">{this.props.movie.name}</a>

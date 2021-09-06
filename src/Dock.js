@@ -25,7 +25,7 @@ class Tabs extends React.Component {
 
   render() {
     return (
-      <div className="dock" onMouseEnter={() => this.showDock(true)} onMouseLeave={() => this.showDock(false)}>
+      <div className="dock" onMouseEnter={() => this.showDock(true)} onMouseLeave={() => this.showDock(false)} onClick={() => this.showDock(true)}>
         <div className={`dock-mask ${this.state.show ? '' : 'show'}`}>
           <strong className="dock-mask-inner">
             | | |

@@ -71,7 +71,25 @@
 }
 
 @media screen and (max-width: 992px) {
-  .tab-selector {
+  .intro {
+    font-size: 1.5vw;
+    bottom: 3vw;
+    right: 3vw;
+  }
+  .smallDuang {
+    height: 2.5vw;
+    transform: translateY(0);
+    width: 2.5vw;
+  }
+  .container {
+    display: none;
+  }
+
+  .dock-container > .button {
+    font-size: 3px;
+    padding: 1vw;
+    margin: 0;
+    margin-bottom: 3vw;
   }
 }
 
