@@ -4,6 +4,7 @@ import Cell from './Cell.js';
 import Button from './Button.js';
 import Search from './Search.js';
 import Dock from './Dock.js';
+import ReactPageScroller from 'react-page-scroller';
 
 class App extends Component {
   constructor(props) {
@@ -187,14 +188,21 @@ class App extends Component {
   };
 
   render() {
-
     const listMovies = this.state.filteredList.map(film => <Cell key={film.name} movie={film} getFilms={this.getFilms}/>)
-
     return (
       <div className="App">
-        <div className="list">
-          {listMovies}
-        </div>
+
+        {
+          listMovies.length === 0
+            ? <div>Loading...</div>
+            : listMovies.length === 1
+              ? listMovies[0]
+              : <ReactPageScroller
+                animationTimer={100}
+              >
+                {listMovies}
+              </ReactPageScroller>
+        }
 
         <Dock>
           <Search filter={this.state.filter} searchFilter={this.searchFilter} handleClick={this.search}/>

@@ -9,7 +9,6 @@
   animation-name: enter;
   transition:max-height 1s;
   height: 100vh;
-  scroll-snap-align: start;
 }
 
 .cell-inner {

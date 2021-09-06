@@ -16,7 +16,6 @@ class Tabs extends React.Component {
   }
 
   showDock(show) {
-    console.log('T')
     this.setState({show: show});
   }
 
