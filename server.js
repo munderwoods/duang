@@ -8,6 +8,8 @@ const port = process.env.PORT || 5000;
 const host = process.env.HOST || 'localhost';
 const httpPort = process.env.HTTP_PORT || 5000;
 const httpsPort = process.env.HTTPS_PORT || 8000;
+const cerPath = process.env.CERT_PATH || '';
+const keyPath = process.env.KEY_PATH || '';
 const http = require('http');
 const https = require('https');
 const MongoClient = require('mongodb').MongoClient;
@@ -119,8 +121,8 @@ MongoClient.connect(
 
 //app.listen(port, host, () => console.log(`Listening on port ${port}, host: ${host}`));
 const credentials = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('Certificate.pem')
+  key: fs.readFileSync(keyPath),
+  cert: fs.readFileSync(certPath)
 };
 
 const httpServer = http.createServer(app);
