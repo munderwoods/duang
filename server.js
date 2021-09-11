@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+const fs = require('fs');
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || 'localhost';
 const httpPort = process.env.HTTP_PORT || 5000;
