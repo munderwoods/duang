@@ -6,6 +6,10 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const host = process.env.HOST || 'localhost';
+const httpPort = process.env.HTTP_PORT || 5000;
+const httpsPort = process.env.HTTPS_PORT || 8000;
+const http = require('http');
+const https = require('https');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
 
@@ -113,5 +117,13 @@ MongoClient.connect(
     console.log("Connected to database: " + db.s.databaseName);
 });
 
-app.listen(port, host, () => console.log(`Listening on port ${port}, host: ${host}`));
+//app.listen(port, host, () => console.log(`Listening on port ${port}, host: ${host}`));
+const credentials = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('Certificate.pem')
+};
 
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+httpServer.listen(httpPort);
+httpsServer.listen(httpsPort);
