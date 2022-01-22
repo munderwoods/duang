@@ -7,7 +7,7 @@
     "express": "^4.17.1",
     "isotope-layout": "^3.0.6",
     "mongodb": "^3.7.0",
-    "node-fetch": "^3.0.0",
+    "node-fetch": "^3.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-page-scroller": "^2.2.1",
